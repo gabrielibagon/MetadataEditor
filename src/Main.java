@@ -15,6 +15,6 @@ public class Main {
 
 		public static void main(String[] args) throws CannotReadException, IOException, TagException, ReadOnlyFileException, InvalidAudioFrameException, KeyNotFoundException, CannotWriteException{
 			MetadataEditor test = new MetadataEditor();
-			test.genreSetter();
+			test.homeBrowser();
 		}
 }
