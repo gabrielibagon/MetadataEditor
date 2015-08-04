@@ -22,10 +22,11 @@ public class MetadataEditor {
 		directoryListing = dir.listFiles();
 		src = AudioFileIO.read(new File("C:\\Users\\Gabriel\\Music\\iTunes\\iTunesMedia\\Music\\18+\\Trust\\02 Midnight Lucy.mp3"));
 		tag = src.getTag();
-		
 	}
 	
-	public void genreSetter() throws KeyNotFoundException, CannotWriteException{
+	//searches the directory
+	public void homeBrowser() throws KeyNotFoundException, CannotWriteException{
+		int counter =0;
 		for (File artistFolder: directoryListing){
 			if (artistFolder.isDirectory()){
 				File artistFolderDir = new File(artistFolder.toURI());
@@ -35,7 +36,7 @@ public class MetadataEditor {
 					File albumFolderDir = new File(albumFolder.toURI());
 					File[] albumFolderContents = albumFolderDir.listFiles();
 						for (File track : albumFolderContents){ 
-	
+							genreSetter(track);
 							System.out.println(track);
 						}
 				
@@ -43,6 +44,7 @@ public class MetadataEditor {
 				}
 			}
 		}
+		System.out.println(counter);
 		try {
 			tag.setField(FieldKey.GENRE,"Electronic, Dance");
 		} catch (FieldDataInvalidException e) {
