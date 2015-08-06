@@ -15,6 +15,10 @@ public class Main {
 
 		public static void main(String[] args) throws CannotReadException, IOException, TagException, ReadOnlyFileException, InvalidAudioFrameException, KeyNotFoundException, CannotWriteException{
 			MetadataEditor test = new MetadataEditor();
-			test.homeBrowser();
+			//test.homeBrowser();
+			Browser b = new Browser();
+			String album = "Kind+of+blue";
+			String artist = "Miles+Davis";
+			b.scraper(album, artist);
 		}
 }

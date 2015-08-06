@@ -40,7 +40,7 @@ public class MetadataEditor {
 					File[] albumFolderContents = albumFolderDir.listFiles();
 						for (File track : albumFolderContents){ 
 							genreSetter(track.toURI());
-							System.out.println(track);
+							//System.out.println(track);
 						}
 				
 					}
@@ -55,11 +55,14 @@ public class MetadataEditor {
 		Tag tag = track.getTag();
 		String artist = tag.getFirst(FieldKey.ARTIST);
 		String album = tag.getFirst(FieldKey.ALBUM);
-		String title = tag.getFirst(FieldKey.TITLE);
+		//String title = tag.getFirst(FieldKey.TITLE);
 		String genreTags = "";
-		b.getGenre(artist, album, track);
+		b.scraper("Miles+Davis", "Kind+Of+Blue");
+		
+		
 		//Commented out so that all tags are not changed during testing
 		//tag.setField(FieldKey.ARTIST, genreTags);
-		track.commit();
+		
+		//track.commit();
 	}
 }
